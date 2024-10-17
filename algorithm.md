@@ -1,6 +1,6 @@
 Let's dive into a structured preparation for the software development skills required for the NUS ICT assessment, focusing on regex, pointers, arrays, hash tables, trees, and search/sorting algorithms.
 
- 1. **Regular Expressions (Regex)**
+ ### Regular Expressions (Regex)
    - Definition: A sequence of characters that forms a search pattern, often used for string searching and manipulation.
    - Key Concepts:
      - Anchors: `^` (start), `$` (end).
@@ -14,7 +14,7 @@ Let's dive into a structured preparation for the software development skills req
      ^\d{3}-\d{2}-\d{4}$  // Validates a Social Security Number (SSN)
      ```
 
- 2. Pointers (C/C++ Focus)
+ ### Pointers (C/C++ Focus)
    - Definition: A pointer is a variable that stores the memory address of another variable.
    - Key Concepts:
      - Pointer declaration: `int *ptr;`
@@ -28,8 +28,112 @@ Let's dive into a structured preparation for the software development skills req
      cout << *ptr;  // Outputs the value at the address, i.e., 10
      ```
 
- 3. Arrays
+### Arrays: Key Concepts
    - Definition: A collection of elements (typically of the same data type) stored in contiguous memory locations.
+     Here are some key notes based on the questions and concepts discussed about arrays:
+
+
+
+1. **Definition**: 
+   - An array is a collection of elements (typically of the same data type) stored in contiguous memory locations.
+
+2. **Characteristics**:
+   - **Fixed Size**: In most programming languages, arrays have a fixed size defined at the time of declaration.
+   - **Indexing**: Elements are accessed by their index, starting from 0.
+   - **Multidimensional Arrays**: Arrays can have more than one dimension (e.g., `int matrix[3][3];`), allowing storage of multiple values in a single variable.
+
+### Common Array Functions and Their Uses
+
+1. **`push()`**:
+   - **Usage**: Adds one or more elements to the end of an array.
+   - **Example**: 
+     ```javascript
+     const fruits = [];
+     fruits.push("banana", "apple"); // fruits = ["banana", "apple"]
+     ```
+
+2. **`pop()`**:
+   - **Usage**: Removes and returns the last element of the array.
+   - **Example**: 
+     ```javascript
+     const fruits = ["banana", "apple"];
+     fruits.pop(); // returns "apple", fruits = ["banana"]
+     ```
+
+3. **`shift()`**:
+   - **Usage**: Removes and returns the first element of an array.
+   - **Example**: 
+     ```javascript
+     const fruits = ["banana", "apple"];
+     fruits.shift(); // returns "banana", fruits = ["apple"]
+     ```
+
+4. **`unshift()`**:
+   - **Usage**: Adds one or more elements to the beginning of an array.
+   - **Example**: 
+     ```javascript
+     const fruits = ["apple"];
+     fruits.unshift("banana"); // fruits = ["banana", "apple"]
+     ```
+
+5. **`map()`**:
+   - **Usage**: Creates a new array by applying a function to every element in the original array.
+   - **Example**: 
+     ```javascript
+     const numbers = [1, 2, 3];
+     const doubled = numbers.map(x => x * 2); // doubled = [2, 4, 6]
+     ```
+
+6. **`filter()`**:
+   - **Usage**: Creates a new array with all elements that pass the test implemented by the provided function.
+   - **Example**: 
+     ```javascript
+     const numbers = [1, 2, 3, 4];
+     const evens = numbers.filter(x => x % 2 === 0); // evens = [2, 4]
+     ```
+
+7. **`reduce()`**:
+   - **Usage**: Executes a reducer function on each element of the array, resulting in a single output value.
+   - **Example**: 
+     ```javascript
+     const numbers = [1, 2, 3, 4];
+     const sum = numbers.reduce((acc, curr) => acc + curr, 0); // sum = 10
+     ```
+
+8. **`find()`**:
+   - **Usage**: Returns the first element that satisfies the provided testing function.
+   - **Example**: 
+     ```javascript
+     const numbers = [1, 2, 3, 4];
+     const found = numbers.find(x => x > 2); // found = 3
+     ```
+
+9. **`indexOf()`**:
+   - **Usage**: Returns the index of the first occurrence of a specified element in the array, or -1 if it is not found.
+   - **Example**: 
+     ```javascript
+     const fruits = ["banana", "apple", "peach"];
+     const index = fruits.indexOf("apple"); // index = 1
+     ```
+
+10. **`splice()`**:
+    - **Usage**: Can remove or replace existing elements and/or add new elements in place.
+    - **Example**: 
+      ```javascript
+      const fruits = ["banana", "apple", "peach"];
+      fruits.splice(1, 1, "orange"); // fruits = ["banana", "orange", "peach"]
+      ```
+
+11. **`slice()`**:
+    - **Usage**: Returns a shallow copy of a portion of the array without modifying the original array.
+    - **Example**: 
+      ```javascript
+      const fruits = ["banana", "apple", "peach"];
+      const sliced = fruits.slice(1, 2); // sliced = ["apple"]
+      ```
+
+### Summary
+Arrays are powerful data structures that allow for organized storage of multiple values. Understanding array methods is essential for effective data manipulation and retrieval in programming. Each method serves distinct purposes and can greatly simplify coding tasks.
    - Key Concepts:
      - Fixed size: Arrays in most languages have a fixed size, defined at the time of declaration.
      - Indexing: Elements are accessed by their index, starting from 0.
