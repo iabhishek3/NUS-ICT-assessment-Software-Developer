@@ -144,7 +144,7 @@ Arrays are powerful data structures that allow for organized storage of multiple
      cout << arr[2];  // Outputs 3
      ```
 
- 4. Hash Tables (Hash Maps)
+ ## Hash Tables (Hash Maps)
    - Definition: A data structure that stores key-value pairs, optimized for fast lookup, insertion, and deletion.
    - Key Concepts:
      - Hash function: Converts a key into an index in the table.
@@ -156,7 +156,7 @@ Arrays are powerful data structures that allow for organized storage of multiple
      print(hash_map["apple"])  # Outputs 1
      ```
 
- 5. Trees (Binary Trees, Binary Search Trees)
+## Trees (Binary Trees, Binary Search Trees)
    - Definition: A hierarchical data structure where each node has a value, and links to two or more child nodes (in binary trees, each node has at most two children).
    - Binary Search Tree (BST): A type of binary tree where the left child is smaller than the parent, and the right child is larger.
    - Traversal methods:
