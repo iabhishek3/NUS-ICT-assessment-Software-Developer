@@ -1,6 +1,6 @@
 Let's dive into a structured preparation for the software development skills required for the NUS ICT assessment, focusing on regex, pointers, arrays, hash tables, trees, and search/sorting algorithms.
 
- ### Regular Expressions (Regex)
+### Regular Expressions (Regex)
    - Definition: A sequence of characters that forms a search pattern, often used for string searching and manipulation.
    - Key Concepts:
      - Anchors: `^` (start), `$` (end).
@@ -13,7 +13,7 @@ Let's dive into a structured preparation for the software development skills req
      ```regex
      ^\d{3}-\d{2}-\d{4}$  // Validates a Social Security Number (SSN)
      ```
- ### Pointer Concept Notes
+### Pointer Concept Notes
 
 **Definition**: 
 - A pointer is a variable that stores the memory address of another variable. It allows for efficient memory management and manipulation of data.
@@ -93,7 +93,6 @@ Pointers are a powerful feature in programming that enable direct memory access 
      int *ptr = &var;  // ptr stores the address of var
      cout << *ptr;  // Outputs the value at the address, i.e., 10
      ```
-
 ### Arrays: Key Concepts
    - Definition: A collection of elements (typically of the same data type) stored in contiguous memory locations.
      Here are some key notes based on the questions and concepts discussed about arrays:
@@ -222,54 +221,93 @@ Arrays are powerful data structures that allow for organized storage of multiple
      print(hash_map["apple"])  # Outputs 1
      ```
 
-## Trees (Binary Trees, Binary Search Trees)
-   - Definition: A hierarchical data structure where each node has a value, and links to two or more child nodes (in binary trees, each node has at most two children).
-   - Binary Search Tree (BST): A type of binary tree where the left child is smaller than the parent, and the right child is larger.
-   - Traversal methods:
-     - In-order traversal (left, root, right) yields nodes in increasing order.
-     - Pre-order traversal (root, left, right) visits nodes in depth-first order.
-     - Post-order traversal (left, right, root).
-   - Example (BST insert):
-     ```cpp
-     struct Node {
-         int data;
-         Node* left;
-         Node* right;
-     };
-     
-     Node* insert(Node* node, int data) {
-         if (node == nullptr) {
-             node = new Node();
-             node->data = data;
-             node->left = node->right = nullptr;
-         } else if (data < node->data) {
-             node->left = insert(node->left, data);
-         } else {
-             node->right = insert(node->right, data);
-         }
-         return node;
-     }
-     ```
+### Trees (Binary Trees, Binary Search Trees)
 
- 6. Search and Sorting Algorithms
-   - Search Algorithms:
-     - Linear Search: Search each element sequentially. Time complexity: O(n).
-     - Binary Search: Efficient for sorted arrays; repeatedly divides the search space in half. Time complexity: O(log n).
-   - Sorting Algorithms:
-     - Bubble Sort: Repeatedly swaps adjacent elements if they are in the wrong order. Time complexity: O(n²).
-     - Merge Sort: Divide and conquer algorithm that splits the array and merges sorted halves. Time complexity: O(n log n).
-     - Quick Sort: Partition-based sort that works by selecting a pivot and recursively sorting subarrays. Time complexity: O(n log n).
-   - Example (Binary Search):
-     ```cpp
-     int binarySearch(int arr[], int left, int right, int x) {
-         while (left <= right) {
-             int mid = left + (right - left) / 2;
-             if (arr[mid] == x) return mid;
-             else if (arr[mid] < x) left = mid + 1;
-             else right = mid - 1;
-         }
-         return -1;
-     }
+
+A **tree** is a hierarchical data structure that consists of nodes connected by edges. Trees are widely used in algorithms, databases, and file systems due to their efficient structure for storing and manipulating hierarchical data.
+
+### Key Concepts:
+
+1. **Node**:
+   - The basic unit of a tree.
+   - Contains data and references (or links) to child nodes.
+   - A node without children is called a **leaf**.
+
+2. **Root**:
+   - The topmost node in the tree.
+   - There is only one root in a tree, and it has no parent.
+
+3. **Child and Parent**:
+   - A node connected below another node is called the **child** of that node.
+   - The node connected above is called the **parent**.
+   - Each node can have multiple children but only one parent (except the root, which has no parent).
+
+4. **Subtree**:
+   - A subtree is a portion of a tree that itself is a tree, consisting of a node and all its descendants.
+
+5. **Height of a Tree**:
+   - The height of a tree is the length of the longest path from the root to any leaf node.
+   - The height of a node is the number of edges in the longest path from that node to a leaf.
+
+6. **Depth of a Node**:
+   - The depth of a node is the number of edges from the root to the node.
+   - Root has a depth of 0.
+
+7. **Level**:
+   - The level of a node is defined by how far it is from the root.
+   - Nodes at the same depth are on the same level.
+
+8. **Binary Tree**:
+   - A tree where each node has at most two children (left and right).
+   - **Types of Binary Trees**:
+     - **Full Binary Tree**: Every node has either 0 or 2 children.
+     - **Complete Binary Tree**: All levels are completely filled except possibly for the last, which is filled from left to right.
+     - **Perfect Binary Tree**: All internal nodes have two children, and all leaf nodes are at the same level.
+     - **Balanced Binary Tree**: The difference between the height of the left and right subtrees for any node is at most 1.
+
+9. **Binary Search Tree (BST)**:
+   - A binary tree where each node follows a specific order: all the nodes in the left subtree have values less than the node, and all the nodes in the right subtree have values greater than the node.
+   - This structure allows for efficient searching, insertion, and deletion operations.
+
+10. **Tree Traversals**:
+    - **Pre-order Traversal**: Visit the root node first, then recursively traverse the left subtree, followed by the right subtree.
+    - **In-order Traversal**: Recursively traverse the left subtree first, visit the root node, and then traverse the right subtree. This is typically used in binary search trees to get the elements in sorted order.
+    - **Post-order Traversal**: Recursively traverse the left subtree, then the right subtree, and finally visit the root node.
+    - **Level-order Traversal (Breadth-First Search)**: Traverse each level of the tree, starting from the root.
+
+11. **Balanced Trees**:
+    - **AVL Tree**: A type of self-balancing binary search tree where the height of the two child subtrees of any node differs by no more than 1.
+    - **Red-Black Tree**: Another self-balancing binary search tree, where each node is either red or black, ensuring the tree remains balanced.
+
+12. **Tree Applications**:
+    - **File System**: The directory structure of a file system is organized as a tree.
+    - **Binary Search**: Binary search trees (BST) are used to implement associative arrays, sets, and for searching in databases.
+    - **Expression Trees**: Used to represent mathematical expressions.
+
+### Example:
+
+Consider a simple binary tree:
+
+```
+        10
+       /  \
+      5    20
+     / \   / \
+    3   7 15  25
+```
+
+- **Root**: 10
+- **Children of 10**: 5 and 20
+- **Subtree rooted at 20**: Consists of 20, 15, and 25.
+- **Height** of the tree: 2 (since the longest path is 10 → 20 → 25).
+- **In-order Traversal**: 3, 5, 7, 10, 15, 20, 25 (which gives the elements in sorted order).
+
+### Common Operations:
+- **Insertion**: Insert a new node in the appropriate position based on the tree's rules (such as in a BST).
+- **Deletion**: Remove a node and rearrange the tree to maintain its properties.
+- **Searching**: Look for a node with a specific value.
+
+Understanding trees and their variations is essential for working with hierarchical data and optimizing search and sorting operations.
      ```
 
 ---
