@@ -197,7 +197,7 @@ Pointers are a powerful feature in programming that enable direct memory access 
       const sliced = fruits.slice(1, 2); // sliced = ["apple"]
       ```
 
-### Summary
+## Summary
 Arrays are powerful data structures that allow for organized storage of multiple values. Understanding array methods is essential for effective data manipulation and retrieval in programming. Each method serves distinct purposes and can greatly simplify coding tasks.
    - Key Concepts:
      - Fixed size: Arrays in most languages have a fixed size, defined at the time of declaration.
@@ -209,7 +209,7 @@ Arrays are powerful data structures that allow for organized storage of multiple
      cout << arr[2];  // Outputs 3
      ```
 
- ## Hash Tables (Hash Maps)
+### Hash Tables (Hash Maps)
    - Definition: A data structure that stores key-value pairs, optimized for fast lookup, insertion, and deletion.
    - Key Concepts:
      - Hash function: Converts a key into an index in the table.
